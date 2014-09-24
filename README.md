@@ -166,9 +166,9 @@ dynaTrace 5.5. has <a href="https://community/display/DOCDT55/Hadoop+MapReduce">
 <div class="section-2" id="74383484_ApacheHadoopandMapReduceFastPack-Installation" >
 <h2>Installation</h2>
 <p>
-You should first inject Agents into your Hadoop environment and create a new system profile. See <a href="https://community/display/DOCDT55/Hadoop+MapReduce">the documentation</a> on how to do this. </p>
+You should first inject Agents into your Hadoop environment and create a new system profile. See <a href="https://community.compuwareapm.com/display/DOCDT55/Hadoop+MapReduce">the documentation</a> on how to do this. </p>
 <p>
-Next just download and import the FastPack on your dynaTrace Server (see <a href="https://community/display/DOCDT55/Plugin+Management">Plugin Management</a>). </p>
+Next just download and import the FastPack on your dynaTrace Server (see <a href="https://community.compuwareapm.com/display/DOCDT55/Plugin+Management">Plugin Management</a>). </p>
 <p>
 As a last step setup the Job Monitor, give it the name &quot;Apache Hadoop Job Monitor&quot; to make all dashboards work out of the box. </p>
 </div>
