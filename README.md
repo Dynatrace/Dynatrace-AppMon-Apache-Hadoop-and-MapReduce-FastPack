@@ -10,10 +10,10 @@ for Hadoop MapReduce](https://community/display/DOCDT55/Hadoop+MapReduce). This 
 | Version | 5.5.0.5225, 5.6.0.5802
 | dynaTrace Version | 5.5, 5.6
 | Author | Michael Kopp
-| License | [dynaTrace BSD](attachments_5275722_2_dynaTraceBSD.txt)
+| License | [dynaTrace BSD](dynaTraceBSD.txt)
 | Support | [Not Supported ](https://community.compuwareapm.com/community/display/DL/Support+Levels#SupportLevels-Community)
 
-[Fastpack Download for dynaTrace 5.5](attachments_122978600_1_ApacheHadoopFastpack_5.5.dtp) contains:
+[Fastpack Download for dynaTrace 5.5](ApacheHadoopFastpack_5.5.dtp) contains:
 
   * MapReduce Jobs Dashboard 
 
@@ -27,7 +27,7 @@ for Hadoop MapReduce](https://community/display/DOCDT55/Hadoop+MapReduce). This 
 
   * Sensor and Profile are built-in with dynaTrace 5.5 
 
-[Fastpack Download for dynaTrace 5.6](attachments_167215201_1_ApacheHadoopFastpack_5.6.0.5802.dtp) additionally contains support for:
+[Fastpack Download for dynaTrace 5.6](ApacheHadoopFastpack_5.6.0.5802.dtp) additionally contains support for:
 
   * Amazon EMR 1.0.3 
 
