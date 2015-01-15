@@ -5,5 +5,4 @@ for Hadoop MapReduce](https://community.compuwareapm.com/community/display/DOCDT
 
 Find further information in the [dynaTrace community](https://community.compuwareapm.com/community/display/DL/Apache+Hadoop+and+MapReduce+FastPack)     
 
-For downloads go to [releases](https://github.com/dynaTrace/Dynatrace-Apache-Hadoop-and-MapReduce-FastPack/releases)
 

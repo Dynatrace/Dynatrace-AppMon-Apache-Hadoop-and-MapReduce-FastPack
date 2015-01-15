@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from dynaTrace Support -->
+<dynatrace version="5.5.0.5226" date="5/27/13 3:33 PM">
+  <dashboardconfig memento.version="5.5.0.5226" icon="com.dynatrace.diagnostics.sdk/default.gif" localizationenabled="false" sessiontype="live" locationassource="true" groupname="" authorname="mkopp" opendrilldowninnewdashboard="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" autoreplacesession="false" modified="2013-05-27T15:33:39+0200" id="cd87c589-98fd-4266-8336-8679fc8ad224" revision="0000013e-e631-bb38-99e5-8dd7fb04b517" created="2013-05-27T15:33:37+0200" description="" name="MapReduce Jobs" modifiedbyname="mkopp" locationascomparesource="false">
+    <reportconfig lines.per.table="100" enabled="true" print.legends="true" orientation="portrait" pagesize="A4" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" optimizeequalcolumns="true" type="PDF" title="" override="false" levels.per.tree="10" description="" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" print.images="true" />
+    <filter>
+      <criterion completepurepath="true" type="agents" mode="all">
+        <textpattern enabled="true" name="agentname" type="contains" />
+        <textpattern enabled="true" name="agenthost" type="contains" />
+      </criterion>
+      <criterion type="and" />
+      <criterion excludeexternalsubpaths="false" type="api" mode="all" />
+      <criterion type="applications" mode="all" />
+      <criterion showrendering="true" isactive="true" shownetwork="true" showjavascript="true" type="browserpathtype" />
+      <criterion timerenabled="false" pageenabled="false" type="browsersectionfilter">
+        <timername>
+          <stringmatchpattern text="" match="contains" />
+        </timername>
+        <pageurl>
+          <stringmatchpattern text="" match="contains" />
+        </pageurl>
+      </criterion>
+      <criterion type="btm" />
+      <criterion filterinterval="false" intervalend="0" type="dcrumdimension" intervalstart="0" />
+      <criterion isactive="true" analyzeserverpath="true" type="enduserpath" analyzeenduserpath="true" />
+      <criterion completepurepath="true" type="hosts" mode="all" />
+      <criterion severities="" statesmode="all" severitiesmode="all" states="" rulesmode="all" type="incident" />
+      <criterion type="or" />
+      <criterion enduser="false" type="purepaths" mode="all" />
+      <criterion showrendering="true" isactive="false" contenttypegroupsmode="all" javascripttriggersmode="all" shownetwork="true" showjavascript="true" type="riapurepathtype" requestcriterion="ALL" />
+      <criterion includemeasurename="true" includetestname="true" type="tests" teststatus="OK" />
+      <criterion enabled="false" filterbyid="false" type="threads" />
+      <criterion type="timeframe">
+        <timeframe type="Last 6h" />
+      </criterion>
+      <criterion type="visits">
+        <visitidset visitsidsetsize="0" />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern enabled="true" name="timerName" type="contains" />
+        <textpattern enabled="true" name="pageContext" type="contains" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern text="" match="contains" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern text="" match="contains" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" enabled="true" time="15" />
+    <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" descriptionfontsize="8" nameshow="true" clienttheme="DEFAULT" headertype="DEFAULT" namefontsize="10" descriptionshow="true" autoadjustfontsizes="false" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+    <dashboardlayout>
+      <portletfolder relationtype="LEFT" ratio="0.95" folderid="org.eclipse.ui.internal.ViewStack@1282a30" selectionindex="0" relatedfolderid="DashboardLayout.blankArea" portletconfigorder="ba3e76f7-00d2-4e2a-9b41-7f6d8e2b451b">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="HEADLESS" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.11764706" folderid="folder" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1282a30" portletconfigorder="7b95117b-3ebc-4659-aa2b-eea25050be4f">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="CUSTOM" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.49487355" folderid="d812e346-73e3-47b6-9aa2-92d2a05c4adf" selectionindex="-1" isplaceholder="true" relatedfolderid="folder" portletconfigorder="" />
+      <portletfolder relationtype="RIGHT" ratio="0.4993234" folderid="b49bfc3e-4622-4416-80f2-fde9a630ef80" selectionindex="-1" isplaceholder="true" relatedfolderid="d812e346-73e3-47b6-9aa2-92d2a05c4adf" portletconfigorder="" />
+      <portletfolder relationtype="RIGHT" ratio="0.4993234" folderid="org.eclipse.ui.internal.ViewStack@2365fe" selectionindex="-1" isplaceholder="true" relatedfolderid="b49bfc3e-4622-4416-80f2-fde9a630ef80" portletconfigorder="" />
+      <portletfolder relationtype="BOTTOM" ratio="0.7344262" folderid="org.eclipse.ui.internal.ViewStack@9dae00" selectionindex="0" relatedfolderid="folder" portletconfigorder="378a1eb1-b4de-43dd-98fa-36d2b041d08e">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="CUSTOM" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.4982912" folderid="org.eclipse.ui.internal.ViewStack@1ba2502" selectionindex="-1" isplaceholder="true" relatedfolderid="org.eclipse.ui.internal.ViewStack@9dae00" portletconfigorder="" />
+      <portletfolder relationtype="RIGHT" ratio="0.49624062" folderid="org.eclipse.ui.internal.ViewStack@346299" selectionindex="0" relatedfolderid="folder" portletconfigorder="761918a0-1faa-4e60-8bf9-4b9d5f15b4e6">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="CUSTOM" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.49107143" folderid="org.eclipse.ui.internal.ViewStack@95b945" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@346299" portletconfigorder="f6e35d77-b115-446e-b67f-ac2c8747dc1e">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="CUSTOM" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.4939394" folderid="org.eclipse.ui.internal.ViewStack@d81381" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@346299" portletconfigorder="569802b7-1aa7-4111-a1d1-56d5a0cc271d">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="CUSTOM" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.49702382" folderid="org.eclipse.ui.internal.ViewStack@1568a5d" selectionindex="0" relatedfolderid="folder" portletconfigorder="0c233d9b-a1d3-47fc-b8aa-f44c4608c936">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="CUSTOM" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.38414216" folderid="org.eclipse.ui.internal.ViewStack@1c906df" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1282a30" portletconfigorder="cce58def-4550-4e82-8ead-3378d5b7d6f4">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="HEADLESS" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="BOTTOM" ratio="0.46721312" folderid="org.eclipse.ui.internal.ViewStack@17e0620" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1c906df" portletconfigorder="b1c62a84-a1d3-4226-9008-a73803dec041">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="HEADLESS" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+      <portletfolder relationtype="RIGHT" ratio="0.32519424" folderid="org.eclipse.ui.internal.ViewStack@170f942" selectionindex="-1" isplaceholder="true" relatedfolderid="org.eclipse.ui.internal.ViewStack@1c906df" portletconfigorder="" />
+      <portletfolder relationtype="BOTTOM" ratio="0.45614034" folderid="org.eclipse.ui.internal.ViewStack@14d204" selectionindex="0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1c906df" portletconfigorder="a0a6c7c0-85fb-4c11-a858-4d737df01e05">
+        <designconfig descriptionalignment="CENTER" descriptionfontstyle="NORMAL" namealignment="CENTER" inherited="false" descriptionfontsize="8" nameshow="true" headertype="HEADLESS" namefontsize="10" descriptionshow="true" namefontstyle="BOLD" descriptionfontcolor="128,128,128" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" sessiontype="live" locationassource="true" unitshown="false" id="a0a6c7c0-85fb-4c11-a858-4d737df01e05" shownasinteger="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" invertcolors="true" description="" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" name="Text and Measurement" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" templatetext="{0} Jobs are running" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@14d204" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" sessionid="Hadoop - Outage Analyzer Production (dt55)" heightmode="AdjustToFontSize" addfilterinfo="false" 
+onlylastvalue="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="8" />
+      <filter>
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="30" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="12" style="BOLD" name="Arial" />
+      <chartsource position="-1" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Sum" uiunit="number" groupingvalue="" id="c9dc7a5c-1828-4985-b137-fdf639773d74" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="true" name="RunningJobs" sourcecolor="RGB(192,64,128,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+        <lightweightuniquemeasureidentifier keyid="RunningJobs" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="RunningJobs" measuretype="MonitorMeasure" metrickeyid="RunningJobs" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@17e0620" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" id="b1c62a84-a1d3-4226-9008-a73803dec041" addfilterinfo="false" description="" lastvalue="false" name="Chart" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="5" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset visitsidsetsize="0" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="30" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Left" zoomable="true" showtooltips="true" bounds.y.lower="0.0" charttype="MeterChart" resolution="15min" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="true" bounds.y.enabled="true" axis.y.show="false" orientation="Vertical" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="false" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition measure="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource position="2" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Avg" uiunit="number" groupingvalue="" id="0be6266b-f41f-4972-8841-c09c65e7bec1" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="true" name="BlacklistedTaskTrackers" sourcecolor="RGB(192,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="BlacklistedTaskTrackers" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="BlacklistedTaskTrackers" measuretype="MonitorMeasure" metrickeyid="BlacklistedTaskTrackers" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="1" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Avg" uiunit="number" groupingvalue="" id="56e59843-31fa-4207-8987-9623163e59ca" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="true" name="ActiveTaskTrackers" sourcecolor="RGB(0,64,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="ActiveTaskTrackers" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="ActiveTaskTrackers" measuretype="MonitorMeasure" metrickeyid="ActiveTaskTrackers" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Vertical" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" structuremode="measureHierarchy" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="400" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="25" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="215" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1282a30" locationassource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" usedashboardsource="true" heightmode="UseBackgroundImageHeight" id="ba3e76f7-00d2-4e2a-9b41-7f6d8e2b451b" addfilterinfo="false" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" description="" name="Text and Image" typeid="com.dynatrace.diagnostics.portlets.text.Text" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="6" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="false" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="12" style="NORMAL" name="Arial" />
+      <image length="24200" offset="-1">
+        <chunk data="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" offset="0" />
+      </image>
+    </portletconfig>
+    <portletconfig com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" sessiontype="live" locationassource="true" unitshown="false" id="cce58def-4550-4e82-8ead-3378d5b7d6f4" shownasinteger="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" invertcolors="true" description="" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" name="Text and Measurement" ismaster="false" locationascomparesource="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" templatetext="{0} Task Trackers are online" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default.gif" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1c906df" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" sessionid="Hadoop - Outage Analyzer Production (dt55)" heightmode="AdjustToFontSize" addfilterinfo="false" 
+onlylastvalue="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="4" />
+      <filter>
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="30" />
+      <sashconfig weights="1,1" displayoption="CHART_AND_TABLE" />
+      <font height="12" style="BOLD" name="Arial" />
+      <chartsource position="-1" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Last" uiunit="number" groupingvalue="" id="c67f33e4-eab8-49c4-a7ba-f2bad9ff5d6b" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="true" name="ActiveTaskTrackers" sourcecolor="RGB(0,128,128,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="false" fetchthreshold="false" autoscale="false">
+        <lightweightuniquemeasureidentifier keyid="ActiveTaskTrackers" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="ActiveTaskTrackers" measuretype="MonitorMeasure" metrickeyid="ActiveTaskTrackers" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@95b945" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" id="f6e35d77-b115-446e-b67f-ac2c8747dc1e" addfilterinfo="false" description="" lastvalue="false" name="Job Times" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="10" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset visitsidsetsize="0" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="10" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" bounds.y.lower="0.0" charttype="ClusteredBarChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="true" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="false">
+          <legendcomposition splittings="true" host="true" measure="true" agent="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource position="1" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Sum" uiunit="ms" groupingvalue="" id="1572ccbe-19d9-4f58-b67d-77b7557c9a59" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="true" name="Hadoop MapReduce Job by Job Name - Total Time" sourcecolor="RGB(64,0,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="BTSP1" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="ms" measuretype="TransactionMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <tagtolabel>
+              <taglabelentry value="MapReduce User Name" key="BTSP2" />
+              <taglabelentry value="MapReduce Job Name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier keyid="Hadoop MapReduce Job by Job Name (Total Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="Hadoop MapReduce Job by Job Name (Total Time;PurePaths;PurePath Response Time)" measuretype="TransactionMeasure" metrickeyid="Value" agentname="" metricsimpledisplayname="Value" />
+            <displaysourceinfo agenthost="" transactionname="Hadoop MapReduce Job by Job Name" agentname="" measureunit="ms" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" structuremode="measureHierarchy" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="400" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="25" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="213" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@1568a5d" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" id="0c233d9b-a1d3-47fc-b8aa-f44c4608c936" addfilterinfo="false" description="" lastvalue="false" name="Job CPU Times" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="9" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset visitsidsetsize="0" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="30" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" bounds.y.lower="0.0" charttype="ClusteredBarChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="true" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="false">
+          <legendcomposition splittings="true" host="true" measure="true" agent="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource position="1" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Sum" uiunit="ms" groupingvalue="" id="b0d6650b-d2f1-4f2b-8e8e-0b641acdbb15" fetchmeasurecolor="true" overridesource="false" rate="10s" ratesupported="true" name="Hadoop MapReduce Job by Job Name - Total CPU Time" sourcecolor="RGB(192,192,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="BTSP1" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="ms" measuretype="TransactionMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <tagtolabel>
+              <taglabelentry value="MapReduce User Name" key="BTSP2" />
+              <taglabelentry value="MapReduce Job Name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier keyid="Hadoop MapReduce Job by Job Name (Total CPU Time;PurePaths;PurePath CPU Duration)" metricgroupkey="Business Transaction Results" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="Hadoop MapReduce Job by Job Name (Total CPU Time;PurePaths;PurePath CPU Duration)" measuretype="TransactionMeasure" metrickeyid="Value" agentname="" metricsimpledisplayname="Value" />
+            <displaysourceinfo agenthost="" transactionname="Hadoop MapReduce Job by Job Name" agentname="" measureunit="ms" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="Measure" splitlayout="Vertical" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" structuremode="measureHierarchy" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="400" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="25" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="213" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="true">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig icon="com.dynatrace.diagnostics.sdk/default_16x16.png" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@9dae00" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" id="378a1eb1-b4de-43dd-98fa-36d2b041d08e" addfilterinfo="false" description="" lastvalue="false" name="Active Jobs" typeid="com.dynatrace.diagnostics.portlets.chart.DynamicMeasureMatrix" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="12" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset visitsidsetsize="0" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" enabled="true" time="5" />
+      <sashconfig weights="1,1" displayoption="CHART" />
+      <datamodelconfig>
+        <resolution name="Auto" />
+        <table drawcolumn="-1" columnmode="Measure" sortcolumn="0" structuremode="flat" columnorder="0,1,2,3,4">
+          <column index="0" sort="Down" forcevisible="false" style="TEXT" hidden="false" width="485" />
+          <column index="1" sort="None" forcevisible="false" style="BAR" hidden="false" width="205">
+            <chartsource position="1" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Last" uiunit="percent" groupingvalue="" id="1d1e5b9d-7399-44c3-aea9-e3b118aed8cb" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="false" name="MapProgress" sourcecolor="RGB(128,128,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="percent" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="true" autoscale="false">
+              <lightweightuniquemeasureidentifier keyid="MapProgress" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="MapProgress" measuretype="MonitorMeasure" metrickeyid="MapProgress" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="MapProgress" />
+              <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="percent" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+            </chartsource>
+          </column>
+          <column index="2" sort="None" forcevisible="false" style="BAR" hidden="false" width="163">
+            <chartsource position="2" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Last" uiunit="percent" groupingvalue="" id="aecfa349-1941-45c8-95fc-a52232fa6377" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="false" name="CleanupProgress" sourcecolor="RGB(192,128,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="percent" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="true" autoscale="false">
+              <lightweightuniquemeasureidentifier keyid="CleanupProgress" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="CleanupProgress" measuretype="MonitorMeasure" metrickeyid="CleanupProgress" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="CleanupProgress" />
+              <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="percent" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+            </chartsource>
+          </column>
+          <column index="3" sort="None" forcevisible="false" style="BAR" hidden="false" width="120">
+            <chartsource position="3" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Last" uiunit="percent" groupingvalue="" id="f3e4f4ba-8998-458b-a4bb-1452a25a43b2" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="false" name="SetupProgress" sourcecolor="RGB(64,64,0,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="percent" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="true" autoscale="false">
+              <lightweightuniquemeasureidentifier keyid="SetupProgress" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="SetupProgress" measuretype="MonitorMeasure" metrickeyid="SetupProgress" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="SetupProgress" />
+              <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="percent" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+            </chartsource>
+          </column>
+          <column index="4" sort="None" forcevisible="false" style="BAR" hidden="false" width="546">
+            <chartsource position="4" scale="0" visible="true" sessiontype="live" colorinheritancemode="random" aggregationtype="Last" uiunit="percent" groupingvalue="" id="af9319c8-81e7-48e0-9756-f9418da33bda" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="false" name="ReduceProgress" sourcecolor="RGB(192,128,64,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="percent" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="true" autoscale="false">
+              <lightweightuniquemeasureidentifier keyid="ReduceProgress" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="ReduceProgress" measuretype="MonitorMeasure" metrickeyid="ReduceProgress" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="ReduceProgress" />
+              <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="percent" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+            </chartsource>
+          </column>
+        </table>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@d81381" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" id="569802b7-1aa7-4111-a1d1-56d5a0cc271d" addfilterinfo="false" description="" lastvalue="false" name="Reduce Tasks" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="3" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset visitsidsetsize="0" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="30" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" bounds.y.lower="0.0" charttype="AreaChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="true" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition measure="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource position="1" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Max" uiunit="number" groupingvalue="" id="1b5a6065-720f-4184-b937-dfbe0554f25e" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="RunningReduceTasks" sourcecolor="RGB(186,42,32,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="RunningReduceTasks" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="RunningReduceTasks" measuretype="MonitorMeasure" metrickeyid="RunningReduceTasks" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="2" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Avg" uiunit="number" groupingvalue="" id="44492223-648f-4603-a1a5-33c14e111cc2" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="MaxReduceTasks" sourcecolor="RGB(90,196,82,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="MaxReduceTasks" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="MaxReduceTasks" measuretype="MonitorMeasure" metrickeyid="MaxReduceTasks" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" structuremode="measureHierarchy" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="400" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="25" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="219" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="org.eclipse.ui.internal.ViewStack@346299" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" id="761918a0-1faa-4e60-8bf9-4b9d5f15b4e6" addfilterinfo="false" description="" lastvalue="false" name="Map Tasks" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="2" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset visitsidsetsize="0" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="30" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" bounds.y.lower="0.0" charttype="AreaChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="true" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition measure="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource position="1" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Max" uiunit="number" groupingvalue="" id="9ea0bfbb-7796-4404-a78e-2922fc149782" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="RunningMapTasks" sourcecolor="RGB(186,42,32,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="RunningMapTasks" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="RunningMapTasks" measuretype="MonitorMeasure" metrickeyid="RunningMapTasks" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="2" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Avg" uiunit="number" groupingvalue="" id="155a13c1-cee6-4d5f-a1e3-e3a19f670938" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="MaxMapTasks" sourcecolor="RGB(90,196,82,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="MaxMapTasks" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="MaxMapTasks" measuretype="MonitorMeasure" metrickeyid="MaxMapTasks" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="PerSeries" splitlayout="Horizontal" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" structuremode="measureHierarchy" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="400" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="25" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="219" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig icon="com.dynatrace.diagnostics.sdk/default.gif" usespecificautorefresh="false" usedashboardsourceforcompare="true" folderid="folder" sessiontype="live" locationassource="true" usedashboardsource="true" sessionid="Hadoop - Outage Analyzer Production (dt55)" id="7b95117b-3ebc-4659-aa2b-eea25050be4f" addfilterinfo="false" description="" lastvalue="false" name="MapReduce Jobs" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" ismaster="false" showabsolutevalues="false" locationascomparesource="false">
+      <reportconfig lines.per.table="100" print.legends="true" enabled="true" optimizeequalcolumns="true" levels.per.tree="10" override="false" print.images="true" reportposition="1" />
+      <filter>
+        <criterion completepurepath="true" type="agents" mode="all">
+          <textpattern enabled="true" name="agentname" type="contains" />
+          <textpattern enabled="true" name="agenthost" type="contains" />
+        </criterion>
+        <criterion type="applications" mode="all" />
+        <criterion type="btm" />
+        <criterion completepurepath="true" type="hosts" mode="all" />
+        <criterion type="timeframe">
+          <timeframe type="Last 6h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset visitsidsetsize="0" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="SECONDS" enabled="true" time="30" />
+      <sashconfig weights="500,500" displayoption="CHART" />
+      <datamodelconfig>
+        <chart maxdisplayitems="10" axis.x.title="" legendposition="Bottom" zoomable="true" showtooltips="true" bounds.y.lower="0.0" charttype="StackedBarChart" resolution="Auto" isentitymarkable="false" title="" showlabels="true" yaxisalignment="0" showname="true" splitcharts="false" bounds.y.enabled="true" axis.y.show="true" orientation="Horizontal" lockyaxis="true" axis.y.title="" axis.y.title.show="true" limititems="false" axis.x.show="true" axis.x.title.show="true" logxaxis="false" showheatfield="true" showvalues="false" showtitle="false" showlegend="true">
+          <legendcomposition measure="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource position="1" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Max" uiunit="number" groupingvalue="" id="b25049f6-5eaa-4b7f-9f63-bcbad1aeda47" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="FailedJobs" sourcecolor="RGB(186,42,32,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="FailedJobs" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="FailedJobs" measuretype="MonitorMeasure" metrickeyid="FailedJobs" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="4" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Max" uiunit="number" groupingvalue="" id="cf15008b-3381-4e61-9d35-1aa2f2ce145f" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="SucceededJobs" sourcecolor="RGB(90,196,82,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="SucceededJobs" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="SucceededJobs" measuretype="MonitorMeasure" metrickeyid="SucceededJobs" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <chartsource position="3" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Max" uiunit="number" groupingvalue="" id="e4503f71-4511-4119-b72d-f6a0c4cb653e" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="RunningJobs" sourcecolor="RGB(74,103,232,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="RunningJobs" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="RunningJobs" measuretype="MonitorMeasure" metrickeyid="RunningJobs" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+
+          <chartsource position="2" scale="0" visible="false" sessiontype="live" colorinheritancemode="random" aggregationtype="Max" uiunit="number" groupingvalue="" id="48c9011a-b2b6-4bd3-b295-cf755a31ab27" fetchmeasurecolor="false" overridesource="true" rate="10s" ratesupported="true" name="KilledJobs" sourcecolor="RGB(242,134,10,255)" sourcetype="MEASURE" fetchbaseline="false" dynamicconfig="false" autounit="false" sessionid="Hadoop - Outage Analyzer Production (dt55)" groupingcriterion="AgentOrMonitor" displayrate="10s" systemid="Hadoop - Outage Analyzer Production (dt55)" unit="number" measuretype="MonitorMeasure" fetch.dynamic.measures="true" fetchthreshold="false" autoscale="false">
+            <lightweightuniquemeasureidentifier keyid="KilledJobs" metricgroupkey="Apache Hadoop Jobs" collector="" systemid="Hadoop - Outage Analyzer Production (dt55)" application="" agenthost="" parentkeyid="KilledJobs" measuretype="MonitorMeasure" metrickeyid="KilledJobs" agentname="Apache Hadoop Job Monitor" metricsimpledisplayname="" />
+            <displaysourceinfo monitorhost="&lt;all-hosts&gt;" monitordetails="Apache Hadoop Job Monitor" measureunit="number" monitorscheduleid="Apache Hadoop Job Monitor" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitmode="Measure" splitlayout="Vertical" />
+        </chart>
+        <table drawcolumn="-1" sortcolumn="0" structuremode="measureHierarchy" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column index="0" sort="Up" forcevisible="false" hidden="false" width="400" />
+          <column index="1" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="2" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="3" sort="None" forcevisible="false" hidden="false" width="25" />
+          <column index="4" sort="None" forcevisible="false" hidden="false" width="100" />
+          <column index="5" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="6" sort="None" forcevisible="false" hidden="false" width="50" />
+          <column index="7" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="8" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="9" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="10" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="11" sort="None" forcevisible="false" hidden="true" width="75" />
+          <column index="12" sort="None" forcevisible="false" hidden="true" width="100" />
+          <column index="13" sort="None" forcevisible="false" hidden="false" width="1067" />
+          <column index="14" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="15" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="16" sort="None" forcevisible="false" hidden="true" width="50" />
+          <column index="17" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="18" sort="None" forcevisible="false" hidden="true" width="150" />
+          <column index="19" sort="None" forcevisible="false" hidden="true" width="150" />
+        </table>
+        <heatfieldconfig smartmeasure="true" filterconfirmed="false" smartserver="true" customevents="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>
+
